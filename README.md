@@ -1,6 +1,6 @@
 # iChooseU
 
-## Introduction
+## Intro
   This project is being used to study how to build data pipelines and use Big Data technologies, such as Apache Kafka, Apache Spark, Apache Beam and cloud services with GCP and Databricks. Furthemore, I'm using containers to study more about Docker, Docker Compose and then start to learn Kubernetes.
   
 ## Data source
