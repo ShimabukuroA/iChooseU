@@ -9,7 +9,7 @@ consumer = KafkaConsumer(
     enable_auto_commit=True,
     auto_commit_interval_ms=5000,
     value_deserializer=lambda x: loads(x.decode('utf-8')),
-    auto_offset_reset='latest')
+    auto_offset_reset='earliest')
 
 myclient = pymongo.MongoClient("mongodb://localhost:27017/")
 mydb = myclient["pokemons"]

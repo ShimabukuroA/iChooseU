@@ -1,4 +1,3 @@
----
 version: '2'
 services:
   zookeeper:
@@ -29,5 +28,32 @@ services:
       - 27017:27017
     volumes:
       - ~/Documents/iChooseU/mongo-data:/data/db
-    
-
+  mysql:
+    image: mysql
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: "senhadificil"
+      MYSQL_DATABASE: "pokemons"
+    ports:
+      - 3306:3306
+    volumes:
+      - ~/Documents/iChooseU/mysql-data:/var/lib/mysql
+  spark-master:
+    image: amauri/spark-master
+    container_name: spark_master
+    restart: always
+    ports:
+      - 8080:8080
+      - 7077:7077
+  spark-worker:
+    image: amauri/spark-worker
+    container_name: spark_worker
+    restart: always
+    depends_on:
+      - spark-master
+    links:
+      - "spark-master:spark-master"
+    environment:
+      MASTER_PORT_7077_TCP_ADDR: "spark://spark-master"
+      MASTER_PORT_7077_TCP_PORT: "7077"
