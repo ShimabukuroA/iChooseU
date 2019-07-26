@@ -27,7 +27,7 @@
   * <del>Create MongoDB container.</del>
   * <del>Read messages from Kafka topic and write in MongoDB.</del>
   * <del>Create MySQL and Spark containers.</del>
-  * Use Spark to do some transformations to data and store in a MySQL table.
+  * Use Spark to do some transformations with data and store in a MySQL table.
   
 # References
  * [PokeAPI Documentation](https://pokeapi.co/docs/v2.html)
