@@ -27,7 +27,7 @@ services:
     ports:
       - 27017:27017
     volumes:
-      - ~/Documents/iChooseU/mongo-data:/data/db
+      - ./mongo-data:/data/db
   mysql:
     image: mysql
     container_name: mysql
@@ -38,7 +38,7 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - ~/Documents/iChooseU/mysql-data:/var/lib/mysql
+      - ./mysql-data:/var/lib/mysql
   spark-master:
     image: amauri/spark-master
     container_name: spark_master
@@ -46,6 +46,9 @@ services:
     ports:
       - 8080:8080
       - 7077:7077
+    volumes:
+      - ./spark-jobs:/home/python-jobs
+      - ./jobs-data:/home/jobs-data
   spark-worker:
     image: amauri/spark-worker
     container_name: spark_worker
@@ -57,3 +60,6 @@ services:
     environment:
       MASTER_PORT_7077_TCP_ADDR: "spark://spark-master"
       MASTER_PORT_7077_TCP_PORT: "7077"
+    volumes:
+      - ./spark-jobs:/home/python-jobs
+      - ./jobs-data:/home/jobs-data
