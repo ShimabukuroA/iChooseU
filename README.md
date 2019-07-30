@@ -9,8 +9,11 @@
 # Files
   We have three files so far: 
   * consumer_kafka_mongo.py: A simple implementation of a consumer that reads messages from kafka and insert into a MongoDB collection.
-  * docker-image-kafka/docker-compose.yml: Configuration file to build Kafka and Zookeeper containers.
+  * docker-compose.yml: Configuration file to build Kafka, Zookeeper, MySQL, MongoDB and Spark cluster containers.
   * PokeAPI test producer.ipynb: Python notebook to get PokeAPI data and send to Kafka topic.
+  * spark-master/: This folder that contains Dockerfile to build a Spark-master image.
+  * spark-worker/: This folder that contains Dockerfile to build a Spark-worker image.
+  * mongo-data/: This folder contains data from MongoDB.
   
 # Data Pipeline
   * Kafka -> MongoDB  
@@ -19,15 +22,18 @@
 
 # TO DO
   This README will be updated as implementations get done. Thus far, the first commit implements a data ingestion into a topic of Kafka's container.
-  * <del>Test PokeAPI</del>
-  * <del>Create Kafka container and send messages to it</del>
-  * <del>Create MongoDB container</del>
-  * <del>Read messages from Kafka topic and write in MongoDB</del>
-  * Create MySQL and Spark containers.
-  * Use Spark to do some transformations to data and store in a MySQL table.
+  * <del>Test PokeAPI.</del>
+  * <del>Create Kafka container and send messages to it.</del>
+  * <del>Create MongoDB container.</del>
+  * <del>Read messages from Kafka topic and write in MongoDB.</del>
+  * <del>Create MySQL and Spark containers.</del>
+  * Use Spark to do some transformations with data and store in a MySQL table.
   
 # References
  * [PokeAPI Documentation](https://pokeapi.co/docs/v2.html)
  * [Kafka Container Documentation](https://docs.confluent.io/current/quickstart/ce-docker-quickstart.html#getting-started-with-docker-compose)
  * [Mongo Documentation](https://docs.mongodb.com/)
  * [Mongo Docker Image Reference](https://hub.docker.com/_/mongo) 
+ * [MySQL Image Documentation](https://hub.docker.com/_/mysql)
+ * [Setting up Standalone Spark Cluster](https://spark.apache.org/docs/latest/spark-standalone.html)
+ 
