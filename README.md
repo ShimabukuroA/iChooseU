@@ -39,4 +39,4 @@
  * [Mongo Docker Image Reference](https://hub.docker.com/_/mongo) 
  * [MySQL Image Documentation](https://hub.docker.com/_/mysql)
  * [Setting up Standalone Spark Cluster](https://spark.apache.org/docs/latest/spark-standalone.html)
- 
+ * [Submitting Spark Applications Documentation](https://spark.apache.org/docs/latest/submitting-applications.html)
