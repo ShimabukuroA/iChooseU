@@ -11,13 +11,15 @@
   * consumer_kafka_mongo.py: A simple implementation of a consumer that reads messages from kafka and insert into a MongoDB collection.
   * docker-compose.yml: Configuration file to build Kafka, Zookeeper, MySQL, MongoDB and Spark cluster containers.
   * PokeAPI test producer.ipynb: Python notebook to get PokeAPI data and send to Kafka topic.
-  * spark-master/: This folder that contains Dockerfile to build a Spark-master image.
-  * spark-worker/: This folder that contains Dockerfile to build a Spark-worker image.
+  * spark-master/: This folder contains a Dockerfile to build a Spark-master image.
+  * spark-worker/: This folder contains a Dockerfile to build a Spark-worker image.
+  * jobs-data/: This folder contains sample data to use with jobs.
+  * spark-jobs/: This folder contains pyspark jobs to be executed by Spark cluster.
   * mongo-data/: This folder contains data from MongoDB.
   
 # Data Pipeline
   * Kafka -> MongoDB  
-    This first step consists in read messages from Kafka and stores in MongoDB as backup from data received from PokeAPI.
+    This first step consists in read messages from Kafka and stores in MongoDB as backup of PokeAPI's messages.
 
 
 # TO DO
@@ -27,6 +29,7 @@
   * <del>Create MongoDB container.</del>
   * <del>Read messages from Kafka topic and write in MongoDB.</del>
   * <del>Create MySQL and Spark containers.</del>
+  * <del>Test a Spark submit in cluster.</del>
   * Use Spark to do some transformations with data and store in a MySQL table.
   
 # References
