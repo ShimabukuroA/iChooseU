@@ -49,9 +49,23 @@ services:
     volumes:
       - ./spark-jobs:/home/python-jobs
       - ./jobs-data:/home/jobs-data
-  spark-worker:
+  spark-worker-1:
     image: amauri/spark-worker
-    container_name: spark_worker
+    container_name: spark_worker-1
+    restart: always
+    depends_on:
+      - spark-master
+    links:
+      - "spark-master:spark-master"
+    environment:
+      MASTER_PORT_7077_TCP_ADDR: "spark://spark-master"
+      MASTER_PORT_7077_TCP_PORT: "7077"
+    volumes:
+      - ./spark-jobs:/home/python-jobs
+      - ./jobs-data:/home/jobs-data
+  spark-worker-2:
+    image: amauri/spark-worker
+    container_name: spark_worker-2
     restart: always
     depends_on:
       - spark-master
